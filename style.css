@@ -15,6 +15,7 @@ header {
     color: rgb(255, 255, 255);
     text-align: left;
     padding: 1rem;
+    position: relative;
 }
 
 main {
@@ -160,3 +161,22 @@ hover 효과가 부드럽게 변하도록 애니메이션 시간을 지정.
   
   /* 차트 자리 확보(위젯 로딩 중 높이 깜빡임 방지) */
   #chart-area { min-height: 420px; }
+
+
+  .lang-btn {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    background: #ffffff;
+    color: #111827;
+    border: 1px solid #e5e7eb;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .lang-btn:hover {
+    background: #f3f4f6;
+  }
