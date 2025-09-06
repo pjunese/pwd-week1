@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    background: #18b7e3;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    padding: 1rem;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    background: #f4f4f4;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #bcb8b8;
+    color: white;
+}
+
+/* Banner
+display: flex; → 안의 버튼들을 가로로 나란히 배치
+gap: 0.75rem; → 버튼 사이의 간격 (1rem = 글자 크기 기준, 보통 16px)
+padding: 1rem 1.25rem; → 내부 여백. 위아래는 1rem, 좌우는 1.25rem 띄움.
+border-top: 1px solid #e5e7eb; → 위쪽에 옅은 회색 선을 하나 긋습니다.
+border-bottom: 1px solid #e5e7eb; → 아래쪽에도 같은 선.
+background: #f9fafb; → 배경색을 아주 연한 회색으로 지정.
+
+*/
+.banner-row {
+    display: flex;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    border-top: 10px solid #e5e7eb;
+    border-bottom: 10px solid #e5e7eb;
+    background: #f9fafb;
+  }
+/* 
+•	appearance: none;
+브라우저 기본 버튼 스타일(회색 배경, 굵은 테두리 등)을 제거
+•	border: 1px solid #e5e7eb;
+테두리를 연한 회색(약간 파스텔톤)으로 설정.
+•	background: #ffffff;
+버튼 배경색을 흰색으로.
+•	color: #111827;
+글자 색을 진한 회색(거의 검정).
+•	padding: 0.7rem 1rem;
+버튼 안쪽 여백 (위·아래 0.7rem, 좌·우 1rem).
+•	border-radius: px;
+버튼을 둥글게. 값이 아주 크면 완전히 타원형/알약 모양이 된다.
+•	font-weight: 700;
+글자를 굵게(bold).
+•	cursor: pointer;
+마우스를 올리면 손가락 모양 커서로 바뀜.
+•	transition: ...;
+hover 효과가 부드럽게 변하도록 애니메이션 시간을 지정.
+•	transform 0.06s ease → 크기/위치 변화는 0.06초 동안.
+•	box-shadow 0.15s ease → 그림자는 0.15초 동안.
+•	background 0.15s ease → 배경색도 0.15초 동안 부드럽게 바뀜.
+*/ 
+  .banner-btn {
+    appearance: none;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    color: #111827;
+    padding: 0.7rem 1rem;
+    border-radius: 200px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.06s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+
+/*
+•	transform: translateY(-1px);
+버튼이 살짝 위로 올라간 느낌(1px 위로 이동).
+•	box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+그림자를 넣어서 떠있는 느낌을 줌.
+•	background: #f3f4f6;
+마우스를 올리면 배경색이 약간 더 진한 회색으로 변함.
+
+*/
+  .banner-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    background: #f3f4f6;
+  }
+
+  /* 2분할 차트 레이아웃 */
+.markets-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr 1fr; /* 좌우 50:50 */
+    background:rgb(226, 226, 238);
+  }
+  
+  @media (max-width: 900px) {
+    .markets-grid {
+      grid-template-columns: 1fr; /* 모바일에서는 세로로 */
+    }
+  }
+
+
+/* M7 버튼  */
+#M7-buttons {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  
+  /* 개별 버튼(기존 버튼 톤과 맞춤) */
+  .company-btn {
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    color: #111827;
+    padding: 8px 10px;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .06s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .company-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(0,0,0,.08);
+    background: #f3f4f6;
+  }
+  
+  /* 차트 자리 확보(위젯 로딩 중 높이 깜빡임 방지) */
+  #chart-area { min-height: 420px; }
